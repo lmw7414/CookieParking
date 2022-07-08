@@ -1,5 +1,6 @@
 package com.gdsc.cookieparking.cookieparking.service;
 
+import com.gdsc.cookieparking.cookieparking.domain.Cookie;
 import com.gdsc.cookieparking.cookieparking.domain.Directory;
 import com.gdsc.cookieparking.cookieparking.domain.User;
 import com.gdsc.cookieparking.cookieparking.repository.DirectoryRepository;
@@ -16,5 +17,16 @@ public class DirectoryService {
 
     public List<Directory> getDirectoryList(String userId) {
         return directoryRepository.findAllByUserId(userId);
+    }
+
+
+    public Directory addDirectory(String userId, String name) {
+        Directory directory = Directory.builder()
+                .userId(userId)
+                .name(name)
+                .build();
+
+
+        return directoryRepository.save(directory);
     }
 }
