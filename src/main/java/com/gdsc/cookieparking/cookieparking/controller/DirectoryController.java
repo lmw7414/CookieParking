@@ -26,4 +26,8 @@ public class DirectoryController {
     public Directory create(@PathVariable("userId") String userId, String name) {
         return directoryService.addDirectory(userId, name);
     }
+
+    //TODO 디렉토리 업데이트 매핑 추가할 것
+    //TODO 디렉토리 삭제 매핑 추가할 것
+
 }
